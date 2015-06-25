@@ -66,7 +66,7 @@
                 <li data-icon="back"><a href="#" data-rel="close">Voltar</a></li>
                 <li><a id="linkInicio" href="home.html" data-ajax="false">Início</a></li>
                 <li><a data-icon="info" href="about.html" data-ajax="false">Sobre</a></li>
-                <li data-icon="delete"><a href="#" id="sair" data-ajax="false">Sair</a></li>
+                <li data-icon="delete"><a href="sair.html" id="sair" data-ajax="false">Sair</a></li>
                 
         </ul>
     </div><!-- /panel -->
@@ -78,8 +78,8 @@
 
 $('#sair').on('click', function(e){
     e.preventDefault();
-    window.localStorage.removeItem("login");
-    window.localStorage.removeItem("codigo");
+    window.localStorage.removeItem("username");
+    window.localStorage.removeItem("codigoUsuario");
     window.location.href = "index.html";
 });
 
