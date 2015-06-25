@@ -108,13 +108,14 @@ $('#btnVoltarCardapio').click(function(e){
 
 $('#btnFecharConta').click(function(e){
     var codigoUsuario    = window.localStorage.getItem("codigoUsuario"); 
+    alert('fechar conta');
     fecharConta(codigoUsuario);
     
 });
 
 
 function fecharConta(codigo_usuario) {   
-        
+     alert('entrou');   
     //$.post('http://localhost/sistemaIntegrado/www/php/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {      
     $.post('http://ibar.eys.es/app/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {    
         alert(json);  
