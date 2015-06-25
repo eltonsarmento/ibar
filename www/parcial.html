@@ -128,7 +128,7 @@ function fecharConta(codigo_usuario) {
 
     $.ajax({
         type: "POST",
-        url: "http://ibar.esy.es/app/fecharConta.php'",
+        url: "http://ibar.esy.es/app/fecharConta.php",
         data: {codigo_usuario:codigo_usuario},
         success: function (result) {
             alert(result);
