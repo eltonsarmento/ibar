@@ -110,8 +110,7 @@ function getBars() {
 function getFavoritos(codigo) { 
    // $.get('http://localhost/sistemaIntegrado/www/php/getFavoritos.php', {usuario:codigo}, function html(json) {
 
-    $.get('http://ibar.esy.es/app/getFavoritos.php', {usuario:codigo}, function html(json) {
-		alert(json);    
+    $.get('http://ibar.esy.es/app/getFavoritos.php', {usuario:codigo}, function html(json) {   
         var dados = jQuery.parseJSON(json);
         var html2 = '';
         $.each(dados.favoritos, function(chave,bar) {
@@ -119,7 +118,6 @@ function getFavoritos(codigo) {
             html2    +=      '<div class="col-md-3 col-sm-4 col-xs-6"><a data-ajax="false" href="checkin.html?codigo='+bar.codigo+'">';
             html2    +=      '<img class="img-responsive" src="http://ibar.esy.es/imagens/'+bar.imagem+'" align="left" style="width:130; height:85px";/></a></div> ';            
         });
-        alert(html2);
         $('#listaFavoritos').append(html2);
     });  
 

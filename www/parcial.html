@@ -108,24 +108,40 @@ $('#btnVoltarCardapio').click(function(e){
 
 $('#btnFecharConta').click(function(e){
     var codigoUsuario    = window.localStorage.getItem("codigoUsuario"); 
-    alert('fechar conta');
     fecharConta(codigoUsuario);
     
 });
 
 
 function fecharConta(codigo_usuario) {   
-     alert('entrou');   
-    //$.post('http://localhost/sistemaIntegrado/www/php/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {      
-    $.post('http://ibar.eys.es/app/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {    
-        alert(json);  
-        if(json == "1"){
-            window.location.href = "fecharConta.html";
-        }else{
-            alert("Error : "+json);
-        }
+        
+    // //$.post('http://localhost/sistemaIntegrado/www/php/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {      
+    // $.post('http://ibar.eys.es/app/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {    
+    //     alert(json);  
+    //     if(json == "1"){
+    //         window.location.href = "fecharConta.html";
+    //     }else{
+    //         alert("Error : "+json);
+    //     }
        
-    });  
+    // });  
+
+    $.ajax({
+        type: "POST",
+        url: "http://ibar.eys.es/app/fecharConta.php'",
+        data: {codigo_usuario:codigo_usuario},
+        success: function (result) {
+            alert(result)
+            if(result == '1'){
+                window.location.href = "fecharConta.html";
+            }else{                            
+                alert('error ao fechar sua conta');
+            }
+        },
+        error: function () {
+            alert("Erro de conexao");
+        }
+    })
 }
 
 
