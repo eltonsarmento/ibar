@@ -116,7 +116,8 @@ $('#btnFecharConta').click(function(e){
 function fecharConta(codigo_usuario) {   
         
     //$.post('http://localhost/sistemaIntegrado/www/php/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {      
-    $.post('http://ibar.eys.es/app/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {      
+    $.post('http://ibar.eys.es/app/fecharConta.php', {codigo_usuario:codigo_usuario}, function html(json) {    
+        alert(json);  
         if(json == "1"){
             window.location.href = "fecharConta.html";
         }else{
