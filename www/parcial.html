@@ -131,7 +131,6 @@ function fecharConta(codigo_usuario) {
         url: "http://ibar.esy.es/app/fecharConta.php",
         data: {codigo_usuario:codigo_usuario},
         success: function (result) {
-            alert(result);
             if(result == '1'){
                 window.location.href = "fecharConta.html";
             }else{                            
