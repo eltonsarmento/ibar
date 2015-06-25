@@ -110,6 +110,7 @@ function getBars() {
 function getFavoritos(codigo) { 
    // $.get('http://localhost/sistemaIntegrado/www/php/getFavoritos.php', {usuario:codigo}, function html(json) {
     $.get('http://ibar.esy.es/app/getFavoritos.php', {usuario:codigo}, function html(json) {
+    	alert(json);
         var dados = jQuery.parseJSON(json);
         var html = '';
         $.each(dados.favoritos, function(chave,bar) {

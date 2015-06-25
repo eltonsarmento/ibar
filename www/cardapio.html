@@ -95,7 +95,7 @@ function buscarValoresCardapio(estabelecimento_id) {
     
     $.get('http://ibar.esy.es/app/getCardapio.php', {estabelecimento_id:estabelecimento_id}, function html(json) {      
     //$.get('http://localhost/sistemaIntegrado/www/php/getCardapio.php', {estabelecimento_id:estabelecimento_id}, function html(json) {      
-         
+        alert(json);
         var html = ""; 
         var dados = jQuery.parseJSON(json);
         

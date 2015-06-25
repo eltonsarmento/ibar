@@ -84,7 +84,6 @@
                     //url: "http://localhost/sistemaIntegrado/www/php/login.php",
                     data: vDados,
                     success: function (result) {
-                        alert(result);
                         if(result == '1'){
                             buscarUsuario(login)
                             //window.localStorage.setItem("username", login);                            
@@ -103,7 +102,6 @@
             function buscarUsuario(email) {   
                 //$.get('http://localhost/sistemaIntegrado/www/php/getUser.php', {email:email}, function html(json) {   
                 $.get('http://ibar.esy.es/app/getUser.php', {email:email}, function html(json) { 
-                    alert(json);
                     if(json != "0"){
                         window.localStorage.setItem("codigoUsuario",json); 
                         window.localStorage.setItem("username", email);                            
@@ -127,7 +125,6 @@
 					//url:"http://localhost/sistemaIntegrado/www/php/cadastroUsers.php",
 					data: formulario,
 					success: function (result){
-                        alert(result);
                        if(result == 1){
                             alert('Registro salvo com sucesso');
                             window.location = "index.html";
