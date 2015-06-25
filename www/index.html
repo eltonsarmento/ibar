@@ -85,7 +85,7 @@
                     data: vDados,
                     success: function (result) {
                         if(result == '1'){
-                            buscarUsuario(login)
+                            buscarUsuario(login);
                             //window.localStorage.setItem("username", login);                            
                             //window.location.href =  "home.html";
                             //document.getElementById("msg_error").style.display = "none";
@@ -102,6 +102,7 @@
             function buscarUsuario(email) {   
                 //$.get('http://localhost/sistemaIntegrado/www/php/getUser.php', {email:email}, function html(json) {   
                 $.get('http://ibar.esy.es/app/getUser.php', {email:email}, function html(json) { 
+                    alert(json);
                     if(json != "0"){
                         window.localStorage.setItem("codigoUsuario",json); 
                         window.localStorage.setItem("username", email);                            
