@@ -66,7 +66,7 @@
                 <li data-icon="back"><a href="#" data-rel="close">Voltar</a></li>
                 <li><a id="linkInicio" href="home.html" data-ajax="false">Início</a></li>
                 <li><a data-icon="info" href="about.html" data-ajax="false">Sobre</a></li>
-                <li data-icon="delete"><a href="sair.html" id="sair" data-ajax="false">Sair</a></li>
+                <li data-icon="delete"><a href="#" id="sair" data-ajax="false">Sair</a></li>
                 
         </ul>
     </div><!-- /panel -->
@@ -109,8 +109,9 @@ function getBars() {
 
 function getFavoritos(codigo) { 
    // $.get('http://localhost/sistemaIntegrado/www/php/getFavoritos.php', {usuario:codigo}, function html(json) {
+
     $.get('http://ibar.esy.es/app/getFavoritos.php', {usuario:codigo}, function html(json) {
-    	alert(json);
+    
         var dados = jQuery.parseJSON(json);
         var html = '';
         $.each(dados.favoritos, function(chave,bar) {

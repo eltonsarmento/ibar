@@ -102,7 +102,6 @@
             function buscarUsuario(email) {   
                 //$.get('http://localhost/sistemaIntegrado/www/php/getUser.php', {email:email}, function html(json) {   
                 $.get('http://ibar.esy.es/app/getUser.php', {email:email}, function html(json) { 
-                    alert(json);
                     if(json != "0"){
                         window.localStorage.setItem("codigoUsuario",json); 
                         window.localStorage.setItem("username", email);                            
